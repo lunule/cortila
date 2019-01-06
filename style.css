@@ -556,7 +556,7 @@ h6,
 h1,
 h2,
 h3 {
-	font-size: 24px;
+	font-size: 22px;
 }
 
 h4,
@@ -570,10 +570,6 @@ h1.printcomp {
 	margin: 42px auto 47px;
 	letter-spacing: 0;
 	text-align: center;
-}
-
-h2 {
-	font-size: 22px;
 }
 
 dt {
