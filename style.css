@@ -317,20 +317,6 @@ blockquote.wp-block-quote:after {
 	color: #c6c6c6;
 }
 
-blockquote:before,
-blockquote.wp-block-quote:before {
-	content: open-quote;
-	left: 4px;
-	top: 7px;
-}
-
-blockquote:after,
-blockquote.wp-block-quote:after {
-	content: close-quote;
-	right: 11px;
-	bottom: -25px;
-}
-
 blockquote cite,
 blockquote.wp-block-quote cite {
 	font-family: Helvetica;
