@@ -94,26 +94,29 @@ jQuery(document).ready(function($){
 	# Single Post/Page Min Height
 	-------------------------------------------------------------------------------------------- */
 
-		if ( $('.single-type').length > 0 ) {
+	function pageMinHeight() {
 
-			const headerHeight 	= $('.wrap--printcomp').outerHeight(),
-				  contentHeight = $('#page').outerHeight(),
-				  footerHeight 	= $('#colophon').outerHeight();
+		const headerHeight 	= $('.wrap--printcomp').outerHeight(),
+			  contentHeight = $('#page').outerHeight(),
+			  footerHeight 	= $('#colophon').outerHeight();
 
-			let	newContentHeight = ( window.innerHeight - ( headerHeight + footerHeight ) );
+		let	newContentHeight = ( window.innerHeight - ( headerHeight + footerHeight ) );
 
-		  	if ( $('body').hasClass('logged-in') ) {
+	  	if ( $('body').hasClass('logged-in') ) {
 
-				const window_width = window.innerWidth;
+			const window_width = window.innerWidth;
 
-				if ( window_width > 768 ) 	{ newContentHeight = ( newContentHeight - 32 ); } 
-				else 						{ newContentHeight = ( newContentHeight - 46 ); }
+			if ( window_width > 768 ) 	{ newContentHeight = ( newContentHeight - 32 ); } 
+			else 						{ newContentHeight = ( newContentHeight - 46 ); }
 
-		  	}
+	  	}
 
-		  	$('#page').css({ minHeight: newContentHeight, })
+	  	$('#page').css({ minHeight: newContentHeight, })
 
-		}
+	}
+
+	pageMinHeight();
+	$(window).smartresize(function(){ pageMinHeight(); });
 
 	/* --------------------------------------------------------------------------------------------
 	> Chocolat
