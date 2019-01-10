@@ -113,7 +113,9 @@ function cortila_custom_video( $atts, $content = null ) {
 	if ( filter_var( $a['src-mp4'], FILTER_VALIDATE_URL ) ) :
 
 		// If not on iOS
-		if ( !$detect->isiOS() ) :
+		if ( !$detect->isiOS() || 
+			 ( $detect->isiOS() && ( '' == $a['src-gif'] ) )
+		   ) :
 		?>
 
 			<div class="wrap--custom-video <?php echo 'wide-' . $a['align'] . ' ' . $margin_class; ?>">
