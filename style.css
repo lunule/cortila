@@ -1466,3 +1466,66 @@ video.wp-video-shortcode,
     padding: 4px 10px;	
     margin-left: -1px;
 }
+
+@media ( max-width: 540px ) {
+
+	.footer-subscribe {
+		width: 150px;
+	}
+
+	.footer-subscribe input[type="text"],
+	.footer-subscribe input[type="submit"] {
+		width: 150px!important;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.footer-subscribe input[type="submit"] {
+		margin-top: -1px;
+	}	
+
+}
+
+@media ( max-width: 420px ) {
+
+	#colophon .footer-navigation {
+		position: relative;
+		padding-bottom: 80px;
+	}
+
+	.footer-navigation ul {
+	    -webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	    flex-direction: column;
+	    -webkit-align-content: stretch;
+	    -ms-flex-line-pack: stretch;
+	    align-content: stretch;
+	    -webkit-align-items: stretch;
+	    -ms-flex-align: stretch;
+	    align-items: stretch;	    		
+	}
+
+	.footer-navigation ul li {
+		margin: 0;
+
+		-webkit-order: 0;
+		-ms-flex-order: 0;
+		order: 0;
+		-webkit-flex: 0 1 auto;
+		-ms-flex: 0 1 auto;
+		flex: 0 1 auto;
+		-webkit-align-self: auto;
+		-ms-flex-item-align: auto;
+		align-self: auto;		
+	}
+
+	.menu-item-object-yawp_wim {
+		position: absolute;
+		width: 150px;
+		bottom: 0;
+		left: 50%;
+		margin-left: -75px!important;
+		margin-right: 0!important;
+	}	
+
+}
