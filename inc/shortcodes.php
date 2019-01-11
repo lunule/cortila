@@ -123,10 +123,12 @@ function cortila_custom_video( $atts, $content = null ) {
 				<div class="custom-video <?php echo $control_class . ' ' . $clickpause_class; ?>">	
 
 					<video 
-						poster="" preload="none" 
+						poster="" 
+						preload="none" 
 						<?php if ( true == $a['autoplay'] ) echo 'autoplay'; ?> 
 						<?php if ( true == $a['muted'] ) echo 'muted'; ?> 
-						class="mejs__player " 
+						<?php if ( $detect->isiOS() ) echo 'playsinline'; ?> 
+						class="mejs__player" 
 						data-mejsoptions='<?php echo json_encode( $playerConfig ); ?>' 
 						width="<?php echo $a['width']; ?>" 
 						height="<?php echo $a['height']; ?>" 

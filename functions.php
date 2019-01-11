@@ -306,7 +306,12 @@ add_filter( 'body_class', 'cortila_custom_body_classes' );
 function cortila_custom_body_classes( $classes ) {
 	
 	global $post;
+	$detect = new Mobile_Detect;
+	
 	$is_single = ( is_page() || is_single() || is_singular() );
+
+	if ( $detect->isiOS() )
+		$classes[] = 'is-ios';	
 
 	if ( $is_single ) :
 
