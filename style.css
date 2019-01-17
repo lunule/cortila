@@ -301,20 +301,12 @@ dd {
 
 blockquote,
 blockquote.wp-block-quote {
-	display: inline-block;
-	background: #f6f6f6;
-	padding: 20px 24px;
+	display: block;
+	padding: 20px 24px 20px 36px;
+	border-left: #222 solid 2px;
 	font-family: Andale Mono;
 	letter-spacing: -.02em;
 	quotes: "“" "”" "‘" "’";
-}
-
-blockquote:before, blockquote:after,
-blockquote.wp-block-quote:before,
-blockquote.wp-block-quote:after {
-	position: absolute;
-	font-size: 60px;
-	color: #c6c6c6;
 }
 
 blockquote cite,
@@ -1375,8 +1367,7 @@ video.wp-video-shortcode,
 	.marginal-note,
 	.marginal-note.left,
 	.marginal-note.right {
-	    border: #000 solid 1px;
-	    border-width: 1px 0 1px 0;
+		background: #f6f6f6;
 	    padding: 29px 24px 24px;
 	    margin: 36px 0;		
 	    width: 100%;
