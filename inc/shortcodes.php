@@ -17,9 +17,10 @@ function cortila_marginal_note( $atts, $content = null ) {
 		'align' => 'left',
 		'color' => 'inherit',
 		'style' => 'normal',
+		'font-size' => '.8em',
 	), $atts ); 
 
-	$output = "<div class='marginal-note {$a['align']}' style='color: {$a['color']}; font-style: {$a['style']}'>{$content}</div>";
+	$output = "<div class='marginal-note {$a['align']}' style='color: {$a['color']}; font-style: {$a['style']}; font-size: {$a['font-size']}'>{$content}</div>";
 	return $output;
 
 }

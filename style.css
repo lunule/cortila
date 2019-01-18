@@ -1309,7 +1309,6 @@ video.wp-video-shortcode,
 	margin: 0px 30px 20px;
 	width: 240px;
 	padding: 0;
-	font-size: .8em;
 	line-height: 1.66em;
 }
 
@@ -1442,7 +1441,8 @@ video.wp-video-shortcode,
     color: #fff;	
     font-size: 15px;
     line-height: 15px;
-    padding: 5px 10px;	    
+    padding: 5px 10px;	
+    height: 27px;    
 
     display: inline-block;
     vertical-align: top;
