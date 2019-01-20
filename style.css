@@ -303,7 +303,7 @@ blockquote,
 blockquote.wp-block-quote {
 	display: block;
 	padding: 20px 24px 20px 36px;
-	border-left: #222 solid 2px;
+	border-left: #222 solid 1px;
 	font-family: Andale Mono;
 	letter-spacing: -.02em;
 	quotes: "“" "”" "‘" "’";
