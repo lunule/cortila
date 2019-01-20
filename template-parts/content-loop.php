@@ -43,14 +43,14 @@
 			<?php elseif ( ( '' !== $loop_featimg_ID ) && ( 'alternative' == $display_opts ) ) :
 
 				// set the default src image size
-				$image_src = wp_get_attachment_image_url( $loop_featimg_ID, 'blog-post-thumbnail' );
-
-				// set the srcset with various image sizes
-				$image_srcset = wp_get_attachment_image_srcset( $loop_featimg_ID, 'blog-post-thumbnail' );
+				$image_src_Arr 	= wp_get_attachment_image_src( $loop_featimg_ID, 'blog-post-thumbnail' );
+				$image_src 		= $image_src_Arr[0];
+				$image_width 	= $image_src_Arr[1];
+				$image_height 	= $image_src_Arr[2];
 				?>
 
 				<div class="entry-thumbnail">
-					<img src="<?php echo $image_src; ?>" srcset="<?php echo $image_srcset; ?>" sizes="(max-width: 960px) 100vw, 960px" alt="" /> 
+					<?php echo "<img src='{$image_src}' width='{$image_width}' height='{$image_height}' alt='' />"; ?> 
 				</div>
 
 			<?php endif;
