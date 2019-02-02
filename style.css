@@ -1323,6 +1323,17 @@ video.wp-video-shortcode,
 	text-align: right;
 }
 
+.home .marginal-note.left,
+.home .marginal-note.right {
+	float: none;
+	width: 100%;
+
+	background: #f6f6f6;
+    padding: 29px 24px 24px;
+    margin: 36px 0;		
+    width: 100%;
+}
+
 .marginal-note img + p,
 .home .marginal-note img + p,
 .marginal-note .chocolat-image + p {
@@ -1331,33 +1342,33 @@ video.wp-video-shortcode,
 
 @media ( min-width: 1140px ) {
 
+	.home #page,
+	.home article {
+		position: unset;
+	}
+
 	.marginal-note {
 		position: absolute;
-		left: calc( ( 100vw - 1040px ) / -2 );
-		padding: 0 60px;
-		width: calc( ( 100vw - 678px ) / 2 );
+		width: calc( ( 100vw - 740px ) / 2 );
+		left: 0;
+		padding: 0 30px;
 		margin: 0;
 		float: none;
 		clear: none;
 	}
 
-	.marginal-note.left { 
-		padding-right: 30px; 
+	.marginal-note.right {
+		left: auto; 
+		right: 0;
 	}
 
-	.marginal-note.right   	{
-		left: auto;
-		right: calc( ( 100vw - 740px ) / -2 );
-		padding-left: 30px;
+	.home .marginal-note.left,
+	.home .marginal-note.right {
+		background: transparent;
+	    padding: 0 30px;
+	    margin: 0;		
+		width: calc( ( 100vw - 678px ) / 2 );	
 	}
-
-	.single-type .marginal-note {
-		width: calc( ( 100vw - 740px ) / 2 );
-		left: 0;
-		padding: 0 30px;
-	}
-
-	.single-type .marginal-note.right { left: auto; right: 0; }	
 
 }
 
