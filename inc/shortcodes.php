@@ -41,8 +41,8 @@ function cortila_marginal_note( $atts, $content = null ) {
 	), $atts ); 
 
 	$a['hide'] 	= is_flag( 'hide', $atts ) ? true : false;
-
-	$visClass 	= ( true == $['hide'] ) ? 'hide-on-handheld' : 'keep-it-shown';
+	
+	$visClass 	= ( true == $a['hide'] ) ? 'hide-on-handheld' : 'keep-it-shown';
 
 	$output = "<div class='marginal-note {$a['align']} {$visClass}' style='color: {$a['color']}; font-style: {$a['style']}; font-size: {$a['font-size']}'>{$content}</div>";
 	return $output;

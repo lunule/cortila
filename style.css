@@ -1387,7 +1387,7 @@ video.wp-video-shortcode,
 }
 
 /* Hide marginal on handheld devices OR below typical tablet landscape viewport width */
-.is-handheld .hide-on-handheld { display: none; }
+/*.is-handheld .hide-on-handheld { display: none; }*/
 @media ( max-width: 1024px ) { .hide-on-handheld { display: none; } }
 
 /* ------------------------------------------------------------------------------------------------
