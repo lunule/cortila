@@ -1,35 +1,5 @@
 <?php
 
-/* ------------------------------------------------------------------------------------------------
-# Marginal Notes
------------------------------------------------------------------------------------------------- */
-
-/**
- * Marginal Notes shortcode
- * 
- * @param  [type] $atts    the shortcode attributes array
- * @param  [type] $content the shortcode content (for enclosing shortcodes)
- * @return [type]          the returned shortcode output
- */
-function cortila_marginal_note( $atts, $content = null ) {
-
-	$a = shortcode_atts( array(
-		'align' => 'left',
-		'color' => 'inherit',
-		'style' => 'normal',
-		'font-size' => '.8em',
-	), $atts ); 
-
-	$output = "<div class='marginal-note {$a['align']}' style='color: {$a['color']}; font-style: {$a['style']}; font-size: {$a['font-size']}'>{$content}</div>";
-	return $output;
-
-}
-add_shortcode( 'marginal-note', 'cortila_marginal_note' );
-
-/* ------------------------------------------------------------------------------------------------
-# Custom Video
------------------------------------------------------------------------------------------------- */
-
 /**
  * Helper function - Unnamed (aka No-Value) WordPress shortcode attributes
  *
@@ -48,6 +18,41 @@ function is_flag( $flag, $atts ) {
 	return false;
 
 }
+
+/* ------------------------------------------------------------------------------------------------
+# Marginal Notes
+------------------------------------------------------------------------------------------------ */
+
+/**
+ * Marginal Notes shortcode
+ * 
+ * @param  [type] $atts    the shortcode attributes array
+ * @param  [type] $content the shortcode content (for enclosing shortcodes)
+ * @return [type]          the returned shortcode output
+ */
+function cortila_marginal_note( $atts, $content = null ) {
+
+	$a = shortcode_atts( array(
+		'align' 	=> 'left',
+		'color' 	=> 'inherit',
+		'style' 	=> 'normal',
+		'font-size' => '.8em',
+		'hide' 		=> false,
+	), $atts ); 
+
+	$a['hide'] 	= is_flag( 'hide', $atts ) ? true : false;
+
+	$visClass 	= ( true == $['hide'] ) ? 'hide-on-handheld' : 'keep-it-shown';
+
+	$output = "<div class='marginal-note {$a['align']} {$visClass}' style='color: {$a['color']}; font-style: {$a['style']}; font-size: {$a['font-size']}'>{$content}</div>";
+	return $output;
+
+}
+add_shortcode( 'marginal-note', 'cortila_marginal_note' );
+
+/* ------------------------------------------------------------------------------------------------
+# Custom Video
+------------------------------------------------------------------------------------------------ */
 
 /**
  * Custom Video shortcode

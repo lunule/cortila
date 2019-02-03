@@ -308,10 +308,14 @@ function cortila_custom_body_classes( $classes ) {
 	global $post;
 	$detect = new Mobile_Detect;
 	
-	$is_single = ( is_page() || is_single() || is_singular() );
+	$is_single 		= ( is_page() || is_single() || is_singular() );
+	$is_handheld 	= ( $detect->isTablet() || $detect->isMobile() );
 
 	if ( $detect->isiOS() )
 		$classes[] = 'is-ios';	
+
+	if ( $is_handheld )
+		$classes[] = 'is-handheld';		
 
 	if ( $is_single ) :
 
