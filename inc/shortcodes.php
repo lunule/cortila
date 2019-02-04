@@ -38,13 +38,15 @@ function cortila_marginal_note( $atts, $content = null ) {
 		'style' 	=> 'normal',
 		'font-size' => '.8em',
 		'hide' 		=> false,
+		'top' 		=> 'unset'
 	), $atts ); 
 
 	$a['hide'] 	= is_flag( 'hide', $atts ) ? true : false;
-	
+	$a['top']	= is_front_page() ? $a['top'] : 'unset';
+
 	$visClass 	= ( true == $a['hide'] ) ? 'hide-on-handheld' : 'keep-it-shown';
 
-	$output = "<div class='marginal-note {$a['align']} {$visClass}' style='color: {$a['color']}; font-style: {$a['style']}; font-size: {$a['font-size']}'>{$content}</div>";
+	$output = "<div class='marginal-note {$a['align']} {$visClass}' style='color: {$a['color']}; font-style: {$a['style']}; font-size: {$a['font-size']}; top: {$a['top']}'>{$content}</div>";
 	return $output;
 
 }

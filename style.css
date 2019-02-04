@@ -1342,8 +1342,7 @@ video.wp-video-shortcode,
 
 @media ( min-width: 1140px ) {
 
-	.home #page,
-	.home article {
+	.home #page {
 		position: unset;
 	}
 
@@ -1369,6 +1368,9 @@ video.wp-video-shortcode,
 	    margin: 0;		
 		width: calc( ( 100vw - 678px ) / 2 );	
 	}
+
+	.home .marginal-note.left { left: calc( (100vw - 1040px)/-2 ); }
+	.home .marginal-note.right { right: calc( (100vw - 1040px)/-2 ); }	
 
 }
 
