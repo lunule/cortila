@@ -393,6 +393,54 @@ function metabox_order( $order ) {
 add_filter( 'get_the_excerpt', 'shortcode_unautop', 9);
 add_filter( 'get_the_excerpt', 'do_shortcode', 9);
 
+/**
+ * Add Twitter card meta tags to wp_head
+ */
+
+add_action( 'wp_head', 'cortila_twitter_cards' );
+function cortila_twitter_cards() {
+
+	global $post;
+	$is_single = ( is_page() || is_single() || is_singular() );
+
+	if( is_single() ) :
+
+   		$permalink 		= get_permalink();
+   		$title 			= get_the_title();
+
+   		$content 		= has_excerpt() ? get_the_excerpt() : get_the_content();
+   		$content 		= wp_trim_words( $content, $num_words = 50, ' ...' );
+
+		$thumbnail_ID 	= get_post_thumbnail_id( $post->ID );
+		$thumbnail_Obj 	= wp_get_attachment_image_src( $thumbnail_ID, 'medium_large', false );
+		$thumbnail 		= $thumbnail_Obj[0];
+
+   		// Specify the Twitter card properties
+		echo "<meta name='twitter:card' content='summary' />\r\n";
+		echo "<meta name='twitter:site' content='@components_one' />\r\n";
+		echo "<meta name='twitter:creator' content='@andrewthompson' />\r\n";
+				
+		echo "<meta name='twitter:title' content='{$title}' />\r\n";
+		echo "<meta name='twitter:description' content='{$content}' />\r\n";
+		echo "<meta name='twitter:image' content='{$thumbnail}' />\r\n";
+
+		// Specify post permalink
+		echo "<meta property='og:url' content='{$permalink}' />\r\n";
+		
+		// Specify post title
+		echo "<meta property='og:title' content='{$title}' />\r\n";
+		
+		// Specify post excerpt
+		echo "<meta property='og:description' content='{$content}' />\r\n";
+		
+		// Specify post image
+		echo "<meta property='og:image' content='{$thumbnail}' />\r\n";
+   
+   endif;
+
+}
+
 /* ------------------------------------------------------------------------------------------------
 # Plugins
 ------------------------------------------------------------------------------------------------ */
+
