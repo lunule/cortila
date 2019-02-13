@@ -42,8 +42,12 @@
 
 			<?php elseif ( ( '' !== $loop_featimg_ID ) && ( 'alternative' == $display_opts ) ) :
 
+				$mimetype 	= get_post_mime_type( $loop_featimg_ID );
+				$imgsize 	= ( 'image/gif' == $mimetype ) ? 'full' : 'blog-post-thumbnail';
+
 				// set the default src image size
-				$image_src_Arr 	= wp_get_attachment_image_src( $loop_featimg_ID, 'blog-post-thumbnail' );
+				$image_src_Arr 	= wp_get_attachment_image_src( $loop_featimg_ID, $imgsize );
+
 				$image_src 		= $image_src_Arr[0];
 				$image_width 	= $image_src_Arr[1];
 				$image_height 	= $image_src_Arr[2];
