@@ -307,11 +307,19 @@ jQuery(document).ready(function($){
 						marginLeft: vMarginLeft,
 					});
 
-				} else {
+				} else if ( ( windowWidth < 1140 ) && ( windowWidth > 740 ) ) {
 
 					$(this).add( $wpVideo ).add( $mejsContainer ).add( $video ).css({
 						width: 		( contentWidth - 60 ),
 						height: 	( contentWidth - 60 ) * vRatio,
+						marginLeft: 0,
+					});
+
+				} else {
+
+					$(this).add( $wpVideo ).add( $mejsContainer ).add( $video ).css({
+						width: 		windowWidth,
+						height: 	windowWidth * vRatio,
 						marginLeft: 0,
 					});
 

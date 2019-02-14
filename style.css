@@ -1182,6 +1182,23 @@ html body #wprmenu_menu_ul li.wprmenu_parent_item_li > ul {
 
 }
 
+@media ( max-width: 740px ) {
+
+	.single-type [class*="wide-"] {
+		width: 100vw;
+		margin-left: -30px;
+		-webkit-transform: translateX(0);
+		    -ms-transform: translateX(0);
+		        transform: translateX(0);		
+	}			
+
+	figure[class*="wp-caption align"] {
+		width: 100vw!important;
+		max-width: unset!important;		
+	}
+
+}
+
 /* ------------------------------------------------------------------------------------------------
 # Single - Post Video
 ------------------------------------------------------------------------------------------------ */
@@ -1231,6 +1248,18 @@ video.wp-video-shortcode,
 
 	.single-type .wide-fullwidth {
 		width: 100vw;
+	}	
+
+}
+
+@media ( max-width: 740px ) {
+
+	.single-type .entry-content .wrap--custom-video {
+		margin-left: -30px!important;
+	}
+
+	.single-type .entry-content video {
+		max-width: unset;
 	}	
 
 }
@@ -1297,6 +1326,19 @@ video.wp-video-shortcode,
 	.single-type .wide-fullwidth + .custom-caption {
 		width: 100vw;
 	}
+
+}
+
+@media ( max-width: 740px ) {
+
+	.single-type [class*="wide"] + figcaption,
+	.single-type [class*="wide"] + .custom-caption {
+		width: 100vw;
+		margin-left: -30px;
+		-webkit-transform: translateX(0);
+		    -ms-transform: translateX(0);
+		        transform: translateX(0);		
+	}			
 
 }
 
@@ -1384,6 +1426,13 @@ video.wp-video-shortcode,
 	    margin: 36px 0;		
 	    width: 100%;
 	    float: none;
+	}
+
+	.single-type .marginal-note,
+	.single-type .marginal-note.left,
+	.single-type .marginal-note.right {
+		width: 100vw;
+		margin-left: -30px;
 	}
 
 }
