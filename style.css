@@ -1184,12 +1184,17 @@ html body #wprmenu_menu_ul li.wprmenu_parent_item_li > ul {
 
 @media ( max-width: 740px ) {
 
-	.single-type [class*="wide-"] {
+	.single-type [class*="wide-"],
+	.single-type .entry-content > img[class*="wp-image"][class*="size"],
+	.single-type .entry-content > p > img[class*="wp-image"][class*="size"],
+	.single-type .entry-content > a > img[class*="wp-image"][class*="size"],
+	.single-type .entry-content > p > a > img[class*="wp-image"][class*="size"] {
 		width: 100vw;
 		margin-left: -30px;
+		max-width: unset;
 		-webkit-transform: translateX(0);
 		    -ms-transform: translateX(0);
-		        transform: translateX(0);		
+		        transform: translateX(0);
 	}			
 
 	figure[class*="wp-caption align"] {
