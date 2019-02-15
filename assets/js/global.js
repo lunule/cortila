@@ -45,36 +45,33 @@
 # Print Component
 ------------------------------------------------------------------------------------------------ */
 
-function print_component() {
-
-	var re = new RegExp(/.*C.*O.*M.*P.*O.*N.*E.*N.*T.*\$/)
+function print_component () {
+	var re = new RegExp(/.*C.*O.*M.*P.*O.*N.*E.*N.*T.*\$/);
+	while(true) {
+		let lst = ['C', 'O', 'M', 'P', 'O', 'N', 'E', 'N', 'T', '$'];
+		let symbols = ['$', '*', '0', '-', '\|'];
+		let word = '';
+		
+		for (let i = 0; i < 40; i++) {
+			let choice = choose([lst[0], '$', '*', '0', '-', '\|']);
+			word = word + choice
+			if (symbols.indexOf(choice) === -1) {
+				var index = lst.indexOf(choice);
+				if (index > -1) {
+					lst.splice(index, 1);
+				}
+			}
+		}
+		
+		if (re.test(word)) {
+			return `${word.substring(0, 20)}\n${word.substring(20, 40)}`.replace('<', '\<')
+		}
+	}
 	
-	while (true) {
-    
-    	let lst = ['C', 'O', 'M', 'P', 'O', 'N', 'E', 'N', 'T', '$'];
-    	let word = '';
-    
-    	for (let i = 0; i < 40; i++) {
-    
-      		let choice = choose([lst[0], '$', '$', '$'])
-      		word = word + choice
-    
-      		if (choice != '$') {
-        		let index = lst.indexOf(choice)
-        		lst.splice(index, 1)
-      		}
-    
-    	}
-    	
-    	if (re.test(word)) {
-      		return `${word.substring(0, 20)}\n${word.substring(20, 40)}`
-    	}
-  	}
-  
-  	function choose(choices) {
-    	var index = Math.floor(Math.random() * choices.length);
-    	return choices[index];
-  	}
+	function choose(choices) {
+		var index = Math.floor(Math.random() * choices.length);
+		return choices[index];
+	}
 }
 
 /* ------------------------------------------------------------------------------------------------
