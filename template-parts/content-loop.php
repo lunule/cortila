@@ -44,6 +44,7 @@
 
 				$mimetype 	= get_post_mime_type( $loop_featimg_ID );
 				$imgsize 	= ( 'image/gif' == $mimetype ) ? 'full' : 'blog-post-thumbnail';
+				$permalink 	= get_permalink();
 
 				// set the default src image size
 				$image_src_Arr 	= wp_get_attachment_image_src( $loop_featimg_ID, $imgsize );
@@ -54,7 +55,7 @@
 				?>
 
 				<div class="entry-thumbnail">
-					<?php echo "<img src='{$image_src}' width='{$image_width}' height='{$image_height}' alt='' />"; ?> 
+					<?php echo "<a href='{$permalink}'><img src='{$image_src}' width='{$image_width}' height='{$image_height}' alt='' /></a>"; ?> 
 				</div>
 
 			<?php endif;
